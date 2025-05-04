@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Generated QR</h1>
+    <img id="qr" />
+    <script>
+      fetch("http://localhost:3000/api/generate-qr")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("qr").src = data.qrImage;
+        });
+    </script>
+  </body>
+</html>
